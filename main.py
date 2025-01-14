@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     print(f"Classification report for classifier {clf}:\n{metrics.classification_report(y_test, predicted)}\n")
 
-    print("hej")
+    print("yay")
