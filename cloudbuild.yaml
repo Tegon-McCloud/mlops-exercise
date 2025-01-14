@@ -1,0 +1,19 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build container image'
+  args: [
+    'build',
+    '.',
+    '-t',
+    'europe-west4-docker.pkg.dev/$PROJECT_ID/test-mlops-repo/vision',
+    '-f',
+    'dockerfiles/vision.dockerfile'
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push container image'
+  args: [
+    'push',
+    'europe-west4-docker.pkg.dev/$PROJECT_ID/test-mlops-repo/vision'
+  ]
+options:
+  logging: CLOUD_LOGGING_ONLY
