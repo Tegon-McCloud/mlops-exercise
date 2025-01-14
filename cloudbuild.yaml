@@ -5,7 +5,7 @@ steps:
     'build',
     '.',
     '-t',
-    'europe-west4-docker.pkg.dev/$PROJECT_ID/test-mlops-repo/vision',
+    'europe-west1-docker.pkg.dev/$PROJECT_ID/europe-west-artifact-registry/vision',
     '-f',
     'dockerfiles/vision.dockerfile'
   ]
@@ -13,7 +13,7 @@ steps:
   id: 'Push container image'
   args: [
     'push',
-    'europe-west4-docker.pkg.dev/$PROJECT_ID/test-mlops-repo/vision'
+    'europe-west1-docker.pkg.dev/$PROJECT_ID/europe-west-artifact-registry/vision'
   ]
 options:
   logging: CLOUD_LOGGING_ONLY
